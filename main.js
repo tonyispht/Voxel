@@ -3,6 +3,7 @@ import { registerBlocks, B } from './blocks.js'
 import { buildTextures } from './textures.js'
 import { generateChunk, GY } from './worldgen.js'
 import { initGame } from './game.js'
+import { initTouch } from './touch.js'
 
 const noa = new Engine({
   debug: false,
@@ -36,6 +37,7 @@ scene.fogMode = 2   // exponential squared
 scene.fogDensity = 0.0065
 
 const game = initGame(noa, AVG)
+initTouch(noa)
 const boot = document.getElementById('boot')
 if (boot) boot.remove()
 

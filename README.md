@@ -29,6 +29,8 @@ Click the canvas to capture the mouse.
 | V | Sandbox: blast radius 3 / 5 / 8 / 12 |
 | U | Career: open the salvage shop (1-5 to buy) |
 
+**Touch devices**: left stick moves, drag anywhere else to look; JUMP (hold for jetpack), DIG (hold), PLACE, TNT and a top row (BLOCK, BRUSH, BLAST, MODE, SHOP) appear automatically.
+
 ## Modes
 
 - **Sandbox**: everything unlocked, infinite TNT and fuel, fast digging. Score is optional bragging rights.

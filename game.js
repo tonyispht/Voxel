@@ -279,11 +279,11 @@ export function initGame(noa, AVG) {
       const maxed = lvl >= u.max
       const cost = u.cost(lvl)
       const can = !maxed && career.credits >= cost
-      return `<div class="${can ? '' : 'dim'}"><b>${i + 1}</b> ${u.name} Lv${lvl}/${u.max} &mdash; ${u.desc(lvl)} ${maxed ? '(MAX)' : `&rarr; <b>${cost}</b>`}</div>`
+      return `<div data-k="Digit${i + 1}" class="${can ? '' : 'dim'}"><b>${i + 1}</b> ${u.name} Lv${lvl}/${u.max} &mdash; ${u.desc(lvl)} ${maxed ? '(MAX)' : `&rarr; <b>${cost}</b>`}</div>`
     })
     const tnt = career.credits >= 40
-    rows.push(`<div class="${tnt ? '' : 'dim'}"><b>5</b> +5 TNT (have ${career.tnt}) &rarr; <b>40</b></div>`)
-    hud.shop.innerHTML = `<h3>Salvage Shop</h3>Credits: <b>${career.credits}</b><br>${rows.join('')}<div class="dim">Press 1-5 to buy &middot; U / Esc to close</div>`
+    rows.push(`<div data-k="Digit5" class="${tnt ? '' : 'dim'}"><b>5</b> +5 TNT (have ${career.tnt}) &rarr; <b>40</b></div>`)
+    hud.shop.innerHTML = `<h3>Salvage Shop</h3>Credits: <b>${career.credits}</b><br>${rows.join('')}<div data-k="KeyU" class="dim">Press 1-5 to buy &middot; U / Esc to close (tap here to close)</div>`
   }
   function buy(i) {
     if (i === 4) {
