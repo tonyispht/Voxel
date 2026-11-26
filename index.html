@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Overgrown</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b1410; font-family: system-ui, sans-serif; }
+  #hud { position: fixed; inset: 0; pointer-events: none; color: #e8f1e4; text-shadow: 0 1px 3px #000; z-index: 10; }
+  #stats { position: absolute; top: 12px; left: 14px; font-size: 14px; line-height: 1.5; background: rgba(8,16,10,.55); padding: 8px 12px; border-radius: 8px; }
+  #stats b { color: #9be37a; }
+  #cross { position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; margin: -9px 0 0 -9px; }
+  #cross:before, #cross:after { content: ""; position: absolute; background: rgba(255,255,255,.85); }
+  #cross:before { left: 8px; top: 0; width: 2px; height: 18px; }
+  #cross:after { top: 8px; left: 0; height: 2px; width: 18px; }
+  #bar { position: absolute; left: 50%; top: calc(50% + 24px); width: 90px; height: 6px; margin-left: -45px; background: rgba(0,0,0,.45); border-radius: 3px; overflow: hidden; opacity: 0; }
+  #bar i { display: block; height: 100%; width: 0; background: #ffb347; }
+  #sel { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); background: rgba(8,16,10,.55); padding: 6px 14px; border-radius: 8px; font-size: 14px; }
+  #help { position: absolute; bottom: 14px; left: 14px; font-size: 12px; line-height: 1.55; opacity: .8; background: rgba(8,16,10,.45); padding: 6px 10px; border-radius: 8px; }
+  #toast { position: absolute; top: 18%; left: 50%; transform: translateX(-50%); font-size: 18px; opacity: 0; transition: opacity .3s; background: rgba(8,16,10,.7); padding: 8px 18px; border-radius: 10px; }
+  #shop { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: rgba(8,16,10,.88); border: 1px solid #4a7a3a; border-radius: 12px; padding: 16px 22px; min-width: 340px; display: none; font-size: 15px; line-height: 1.8; }
+  #shop h3 { margin: 0 0 8px; color: #9be37a; }
+  #shop .dim { opacity: .5; }
+</style>
+</head>
+<body>
+<div id="hud">
+  <div id="stats"></div>
+  <div id="cross"></div>
+  <div id="bar"><i></i></div>
+  <div id="toast"></div>
+  <div id="shop"></div>
+  <div id="sel"></div>
+  <div id="help">
+    WASD move &middot; Space jump (hold in air = jetpack) &middot; Shift sprint &middot; Click to capture mouse<br>
+    Hold <b>LMB</b> dig &middot; <b>RMB</b> place &middot; <b>R</b> next block &middot; <b>T</b> plant TNT<br>
+    <b>M</b> sandbox / career &middot; <b>B</b> brush size &middot; <b>V</b> blast size (sandbox) &middot; <b>U</b> shop (career)
+  </div>
+</div>
+<script type="module" src="/main.js"></script>
+</body>
+</html>
