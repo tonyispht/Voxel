@@ -1,6 +1,13 @@
 // Gameplay: digging, brushes, TNT, structural collapse, jetpack, upgrades, HUD.
 
-import { ParticleSystem, Texture, Vector3, Color3, Color4 } from '@babylonjs/core'
+// Deep imports only: a root '@babylonjs/core' import would load a second, separate copy of Babylon from the CDN
+import { ParticleSystem } from '@babylonjs/core/Particles/particleSystem'
+import '@babylonjs/core/Particles/particleSystemComponent'
+import '@babylonjs/core/Shaders/particles.vertex'
+import '@babylonjs/core/Shaders/particles.fragment'
+import { Texture } from '@babylonjs/core/Materials/Textures/texture'
+import { Vector3 } from '@babylonjs/core/Maths/math.vector'
+import { Color3, Color4 } from '@babylonjs/core/Maths/math.color'
 import { DEFS, B } from './blocks.js'
 import { findFalling, FallingBody, CrumbleBody } from './structure.js'
 import { GY } from './worldgen.js'
