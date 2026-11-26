@@ -37,6 +37,29 @@
     <b>M</b> sandbox / career &middot; <b>B</b> brush size &middot; <b>V</b> blast size (sandbox) &middot; <b>U</b> shop (career)
   </div>
 </div>
-<script type="module" src="/main.js"></script>
+<div id="boot" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:#9be37a;font-size:18px;text-align:center;padding:24px;z-index:5">Growing the jungle&hellip;</div>
+<script>
+  // surface load failures instead of leaving a silent black page
+  window.addEventListener('error', function (e) {
+    var b = document.getElementById('boot')
+    if (b) { b.style.color = '#ff9a8a'; b.textContent = 'Failed to start: ' + (e.message || 'unknown error') }
+  })
+  window.addEventListener('unhandledrejection', function (e) {
+    var b = document.getElementById('boot')
+    if (b) { b.style.color = '#ff9a8a'; b.textContent = 'Failed to start: ' + ((e.reason && e.reason.message) || e.reason) }
+  })
+</script>
+<!-- GitHub Pages serves this file as-is (no build), so bare imports are resolved here.
+     "npm run dev" / "npm run build" (Vite) ignore this map and use node_modules instead. -->
+<script type="importmap">
+{
+  "imports": {
+    "noa-engine": "https://esm.sh/noa-engine@0.33.0?external=@babylonjs/core&target=es2022",
+    "@babylonjs/core": "https://esm.sh/@babylonjs/core@6.49.0?target=es2022",
+    "@babylonjs/core/": "https://esm.sh/@babylonjs/core@6.49.0/"
+  }
+}
+</script>
+<script type="module" src="./main.js"></script>
 </body>
 </html>

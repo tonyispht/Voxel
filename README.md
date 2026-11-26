@@ -8,6 +8,7 @@ city that was abandoned long ago and swallowed by jungle. Dig anywhere, blow up 
 ```bash
 npm install
 npm run dev      # then open the printed localhost URL
+# or just open index.html via any static host (GitHub Pages works as-is; engine loads from a CDN)
 ```
 
 Click the canvas to capture the mouse.

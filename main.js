@@ -36,6 +36,8 @@ scene.fogMode = 2   // exponential squared
 scene.fogDensity = 0.0065
 
 const game = initGame(noa, AVG)
+const boot = document.getElementById('boot')
+if (boot) boot.remove()
 
 // handy for poking around in the console
 window.noa = noa
